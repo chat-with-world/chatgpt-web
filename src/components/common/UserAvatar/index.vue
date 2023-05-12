@@ -7,6 +7,8 @@ import { isString } from '@/utils/is'
 
 const userStore = useUserStore()
 
+const siteName = 'ChatWith.World'
+
 const userInfo = computed(() => userStore.userInfo)
 </script>
 
@@ -27,7 +29,7 @@ const userInfo = computed(() => userStore.userInfo)
     </div>
     <div class="flex-1 min-w-0 ml-2">
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap">
-        {{ userInfo.name ?? 'ChenZhaoYu' }}
+        {{ siteName }}
       </h2>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span

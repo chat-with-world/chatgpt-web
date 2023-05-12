@@ -13,6 +13,8 @@ defineProps<Props>()
 
 const authStore = useAuthStore()
 
+const notificationText = ['限时活动：此站点限时免费推广', '访问密码为chatwith.world']
+
 const ms = useMessage()
 
 const loading = ref(false)
@@ -57,12 +59,12 @@ function handlePress(event: KeyboardEvent) {
       <div class="space-y-4">
         <header class="space-y-2">
           <h2 class="text-2xl font-bold text-center text-slate-800 dark:text-neutral-200">
-            403
+            {{ notificationText[0] }}
           </h2>
           <p class="text-base text-center text-slate-500 dark:text-slate-500">
-            {{ $t('common.unauthorizedTips') }}
+            {{ notificationText[1] }}
           </p>
-          <Icon403 class="w-[200px] m-auto" />
+          <Icon403 class="w-[180px] m-auto" />
         </header>
         <NInput v-model:value="token" type="password" placeholder="" @keypress="handlePress" />
         <NButton

@@ -21,6 +21,11 @@ function handleAdd() {
   if (isMobile.value)
     appStore.setSiderCollapsed(true)
 }
+// 直接跳转到导航站点chatwith.world
+function jump2Navigation() {
+  window.location.href = 'https://chatwith.world'
+}
+const noticeMsg = '点此返回导航站'
 
 function handleUpdateCollapsed() {
   appStore.setSiderCollapsed(!collapsed.value)
@@ -80,8 +85,8 @@ watch(
           <List />
         </div>
         <div class="p-4">
-          <NButton block @click="show = true">
-            {{ $t('store.siderButton') }}
+          <NButton block @click="jump2Navigation">
+            {{ noticeMsg }}
           </NButton>
         </div>
       </main>
